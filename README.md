@@ -1,7 +1,4 @@
 # Flappy Hunt
 Projekt z przedmiotu Modelowanie i Analiza Systemów Informatycznych. Grupa 2
 
-Projekt składa się z trzech modułów:
-- front-end - gra w stylu Duck Hunt z konsoli NES napisana w języku Javascript
-- back-end - Webservice w technologii Grails służący do komunikacji strony internetowej z urządzeniami mobilnymi
-- android - aplikacja przeznaczona na telefony z systemem Android, która zmiania je w bezprzewodowe kontrolery gier
+Gra multiplayer stworzona w technologii JavaScript/HTML5/CSS3. Flappy Hunt to gra wzorowana na Duck Hunt(gra z konsoli NES). Za kontroler gracza odpowiada smartphone pod kontrolą systemu Android.
