@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\uni\miasi\flappy-hunt\android\FlappyHunt\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="D:\uni\miasi\flappy-hunt\android\FlappyHunt\app\build\intermediates\pre-dexed\debug\classes-785c357db63ffe7dabfebf4e041d50d2e9fe1b37.jar" />
+    </item>
+    <item
+        jar="D:\uni\miasi\flappy-hunt\android\FlappyHunt\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="D:\uni\miasi\flappy-hunt\android\FlappyHunt\app\build\intermediates\pre-dexed\debug\classes-2b38b507ccb11fc8e1ab3113043e166d300b15e4.jar" />
+    </item>
+    <item
+        jar="D:\Program Files\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="D:\uni\miasi\flappy-hunt\android\FlappyHunt\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-2c0fba76f68ca98bd3746823399040e2853e631e.jar" />
+    </item>
+    <item
+        jar="D:\uni\miasi\flappy-hunt\android\FlappyHunt\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="D:\uni\miasi\flappy-hunt\android\FlappyHunt\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-3c5520d25517fbdf2baf8b3e839871bd595584ce.jar" />
+    </item>
+
+</items>
