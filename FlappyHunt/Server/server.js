@@ -11,23 +11,26 @@ var mobileDevicesServer = my_http.createServer(function(request,response){
 });
 
 mobileDevicesServer.listen(33333, function() {
-    sys.puts("Server Running on 33333 to mobile device communication");
+    console.log("Server Running on 33333 to mobile device communication");
 });
 
 wsMobileDeviceServer = new WebSocketServer({
         httpServer: mobileDevicesServer
     });
 
-wsMobileDeviceServer.on('request', function(r){
-    console.log("New connection...");
-});
+wsMobileDeviceServer.on('request', function(request) {
+	console.log("New connection...");
+    var connection = request.accept(null, request.origin);
 
-wsMobileDeviceServer.on('mesage', function( message ) {
-   console.log("New message: " + message); 
-});
+    connection.on('message', function(message) {
+        if (message.type === 'utf8') {
+            console.log("income: " + message.utf8Data);
+        }
+    });
 
-wsMobileDeviceServer.on('close', function(r) {
-   console.log("Connection end..."); 
+    connection.on('close', function(connection) {
+        console.log("Connection closed");
+    });
 });
 
 /********************************************************
