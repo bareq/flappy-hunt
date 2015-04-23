@@ -24,11 +24,15 @@ import java.net.UnknownHostException;
 
 public class SerwerListActivity extends ActionBarActivity {
 
+    ObslugaWS obslugaWS;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_serwer_list);
         getSupportActionBar().setTitle("Wyszukiwanie serwera");
+        obslugaWS = new ObslugaWS(this);
+        obslugaWS.connectWebSocket("ws://192.168.0.15:33333");
     }
 
 
@@ -49,7 +53,8 @@ public class SerwerListActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_refresh) {
-            new DownloadFilesTask().execute("das");
+            //new DownloadFilesTask().execute("das");
+            obslugaWS.sendMessage("hejka");
             return true;
         }
 
