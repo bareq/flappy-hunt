@@ -11,7 +11,7 @@ function celownikViewModel(options )
 	}
 
 
-	self.lec = function(x, y)
+	self.fly = function(x, y)
 	{
 		$( "#"+self.id ).animate({
 		    left: "+="+x,
@@ -19,6 +19,22 @@ function celownikViewModel(options )
 		  }, 100, function() {
 		    // Animation complete.
 		});
+	}
+
+	self.shoot = function()
+	{
+		/*
+			Pobieramy aktualna pozycję celownika, po czym sprawdzamy czy jakis ptaszek znajduje sie w 
+			pozycji strzalu po czym odsylamy odpowiedz do serwera o trafieniu i za ile punktów.
+			Aktualizujemy też punkty u każdego gracza. Usuwamy zabitą kaczkę.
+		*/
+	}
+
+	self.destroy = function()
+	{
+		console.log("psujemy")
+		delete self;
+		console.log("popsulismy")
 	}
 
 }

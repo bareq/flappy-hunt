@@ -67,4 +67,5 @@ $(document).ready(function(){
               waitForConnection(callback, interval);
           }, interval);
       }
-}})
+  }
+});
