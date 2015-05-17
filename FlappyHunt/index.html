@@ -17,16 +17,23 @@
 		<script src="js/GlobalGameViewModel.js" type="text/javascript"></script>
 		<script src="js/planszaViewModel.js" type="text/javascript"></script>
 		<script src="js/celownikViewModel.js" type="text/javascript"></script>
+		<script src="js/flappyViewModel.js" type="text/javascript"></script>
 
 		<!-- style -->
 		<link rel="stylesheet" href="css/style.css">
     </head>
 	<body>
-		<img id="tlo" src="img/tapeta_witajaca.jpg" data-bind="style:{width: window.innerWidth-15, height: window.innerHeight-15}"/>
-		<!-- ko foreach: users() -->
+		<img id="tlo" src="img/tapeta_witajaca.jpg" data-bind="style:{width: window.innerWidth-15, 
+		height: window.innerHeight-15}"/>
+		<!-- ko foreach: DATA.Global.users() -->
 			<div data-bind="lazy-template: 'celownikView', data: $data"></div>
 		<!-- /ko -->
-		<button data-bind="click: function(){CreateUser(1,'jacek')}">Stwórz gracza</button>
+		<!-- ko foreach: DATA.Global.birds() -->
+			<div data-bind="lazy-template: 'flappyView', data: $data"></div>
+		<!-- /ko -->
+
+		<button data-bind="click: function(){DATA.Global.CreateUser(1,'jacek')}">Stwórz gracza</button>
+		<button data-bind="click: function(){DATA.Global.CreateFlappy()}">Stwórz ptaka</button>
 		<button id="connect">Połącz</button>
 		<button id="closeConnect">Zamknij połączenie</button>
 		<button id="sendMessage">Wyślij wiadomość</button>

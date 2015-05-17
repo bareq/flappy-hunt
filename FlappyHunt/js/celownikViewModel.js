@@ -32,9 +32,10 @@ function celownikViewModel(options )
 
 	self.destroy = function()
 	{
-		console.log("psujemy")
-		delete self;
-		console.log("popsulismy")
+		var usersTab = DATA.Global.users();
+		var index = usersTab.indexOf(self);
+		usersTab.splice(index, 1);
+		DATA.Global.users(usersTab);
 	}
 
 }
