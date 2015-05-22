@@ -23,35 +23,10 @@ function flappyViewModel(options )
 		{
 			y = -y;
 		}
-
-		var bird = $( "#"+self.id );
-		console.log(x, y, DATA.Global.windowWidth(), DATA.Global.windowHeigth(), self.pos_x(), self.pos_y())
-		self.fly2(x, y);
+		self.flyAnimate(x, y);
 	}
 
-/*	self.randomFly2 = function()
-	{
-		console.log("randomFly2", self.id)
-		self.interval = setInterval(function () {
-	        var x = Math.floor((Math.random() * 10) - 5); 
-			var y = Math.floor((Math.random() * 10) - 5); 
-			var bird = $( "#"+self.id );
-			bird.css('left', '+='+x);
-			bird.css('top', '+='+y);
-	    }, 50);
-	}
-
-	self.fly = function(x, y)
-	{
-		$( "#"+self.id ).animate({
-		    left: "+="+x,
-		    top: "+="+y
-		  }, 1000, function() {
-		    // Animation complete.
-		});
-	}*/
-
-	self.fly2 = function(x, y)
+	self.flyAnimate = function(x, y)
 	{
 		var time = 0;
 		var bird = $( "#"+self.id );
@@ -60,7 +35,6 @@ function flappyViewModel(options )
 
 		var interval = setInterval(function () {
 			time += 25;
-			//console.log(posx,posy);
 			self.pos_x(self.pos_x()+posx);
 			self.pos_y(self.pos_y()+posy);
 			bird.css('left', '+='+posx);
@@ -73,9 +47,14 @@ function flappyViewModel(options )
 	    }, 25);
 	}
 
-	self.kill = function()
+	self.fly = function(x, y)
 	{
-
+		$( "#"+self.id ).animate({
+		    left: "+="+x,
+		    top: "+="+y
+		  }, 100, function() {
+		    // Animation complete.
+		});
 	}
 
 	self.destroy = function()

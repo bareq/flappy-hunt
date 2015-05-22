@@ -26,13 +26,21 @@
 </head>
 
 <body>
-    <img id="tlo" src="img/tapeta_witajaca.jpg" data-bind="style:{width: window.innerWidth-15,
-		height: window.innerHeight-15}" />
+
+    <img id="tlo" src="img/tapeta_witajaca.jpg" />
     <!-- ko foreach: DATA.Global.users() -->
-    <div data-bind="lazy-template: 'celownikView', data: $data"></div>
+	    <div class="celownik-blok" data-bind="style: {left: pos_x()+'px', top: pos_y()+'px'}, attr: {id: id}">
+			<img class="celownik" data-bind="attr: {src: 'img/'+img}" />
+			<button data-bind="click: function(){fly(50,50)}">Lec</button>
+			<button data-bind="click: function(){destroy()}">Zniszcz</button>
+		</div>
     <!-- /ko -->
     <!-- ko foreach: DATA.Global.birds() -->
-    <div data-bind="lazy-template: 'flappyView', data: $data"></div>
+	    <div class="celownik-blok" data-bind="style: {left: pos_x()+'px', top: pos_y()+'px'}, attr: {id: id}">
+			<img class="celownik" data-bind="attr: {src: 'img/'+img}" />
+			<button data-bind="click: function(){randomFly()}">Lec</button>
+			<button data-bind="click: function(){destroy()}">Zniszcz</button>
+		</div>
     <!-- /ko -->
 
     <button data-bind="click: function(){DATA.Global.CreateUser(1,'jacek')}">Stwórz gracza</button>
@@ -44,7 +52,6 @@
 
     <!-- niezej testy -->
     <span data-bind="text: planszaViewModel.nazwa"></span>
-    <div data-bind="lazy-template: 'planszaView', data: $data"></div>
     <!-- ko if: false-->
     <div>sadsdasdasdasd</div>
     <!-- ko fn: function(){ console.log("kolorowo") } -->

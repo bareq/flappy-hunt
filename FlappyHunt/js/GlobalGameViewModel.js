@@ -172,10 +172,3 @@ function GlobalGameViewModel() {
 
 	$("#connect").bind('click', self.connectToServer);
 }
-
-$( document ).ready( function() {
-	DATA = {
-		Global: new GlobalGameViewModel()
-	}
-	ko.applyBindings();
-});

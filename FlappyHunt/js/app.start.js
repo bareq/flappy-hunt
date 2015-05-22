@@ -1,8 +1,8 @@
-ko.lazyTemplate.init({
-	loader: function (name, callback)
-	{
-		$.get('/FlappyHunt/html/'+name+'.tpl',callback);
+$( document ).ready( function() {
+	DATA = {
+		Global: new GlobalGameViewModel()
 	}
+	ko.applyBindings();
 });
 
 
