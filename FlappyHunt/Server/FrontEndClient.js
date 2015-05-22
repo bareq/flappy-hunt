@@ -8,6 +8,8 @@ module.exports = FrontEndClient = function(connection) {
     this.name = "FrontEndClient";
     // Połączenie gracza
     this.connection = connection;
+    // Client IP address
+    this.IP = connection.remoteAddress
     // Inicjalizacja socketa(przypisanie listenerów itp)
     this.initialize();
 }
@@ -21,7 +23,7 @@ FrontEndClient.prototype.initialize = function() {
 
     // Kiedy gracz zamyka połączenie
     this.connection.on('close', function(reasonCode, description) {
-        console.log((new Date()) + ' Klient ' + connection.remoteAddress + ' został rozłączony.');
+        console.log('|----------> Klient ' + self.IP + ' został rozłączony.');
     });
 
 }
