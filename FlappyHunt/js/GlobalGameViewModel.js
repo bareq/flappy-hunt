@@ -11,8 +11,8 @@ function GlobalGameViewModel() {
 
 	self.CreateUser = function(id, name)
 	{
-		var x = Math.floor((Math.random() * 1200) + 50); 
-		var y = Math.floor((Math.random() * 450) + 50); 
+		var x = Math.floor((Math.random() * 1200) + 50);
+		var y = Math.floor((Math.random() * 450) + 50);
 		var randomImg = Math.floor((Math.random() * self.viewfinder.length) + 0);
 		var img = self.viewfinder[randomImg];
 		self.viewfinder.splice(randomImg, 1);
@@ -23,8 +23,8 @@ function GlobalGameViewModel() {
 
 	self.CreateFlappy = function()
 	{
-		var x = Math.floor((Math.random() * 1200) + 50); 
-		var y = Math.floor((Math.random() * 450) + 50); 
+		var x = Math.floor((Math.random() * 1200) + 50);
+		var y = Math.floor((Math.random() * 450) + 50);
 		var randomImg = Math.floor((Math.random() * self.viewFlappy.length) + 0);
 		var img = self.viewFlappy[randomImg];
 		self.viewFlappy.splice(randomImg, 1);
@@ -37,7 +37,7 @@ function GlobalGameViewModel() {
 	self.getPlayer = function(id)
 	{
 		var searchUser = {};
-		$.each(self.users(), 
+		$.each(self.users(),
 			function(index, user){
 				if(user.id==id)
 				{
@@ -51,7 +51,7 @@ function GlobalGameViewModel() {
 	self.getFlappy = function(id)
 	{
 		var searchFlappy = {};
-		$.each(self.birds(), 
+		$.each(self.birds(),
 			function(index, bird){
 				if(bird.id==id)
 				{
@@ -64,14 +64,14 @@ function GlobalGameViewModel() {
 
 	self.connectToServer = function()
 	{
-		self.socket = new WebSocket("ws://192.168.0.22:9999", "echo-protocol");
+		self.socket = new WebSocket("ws://127.0.0.1:9999", "echo-protocol");
 
-		self.socket.addEventListener("open", function(event) 
+		self.socket.addEventListener("open", function(event)
 		{
 		    console.log("Connected");
 		});
 
-		self.socket.addEventListener("message", function(event) 
+		self.socket.addEventListener("message", function(event)
 		{
 		    console.log("nadeszla wiadomość z serwera: ", event.data);
 		    // odbiór wiadomości z serwera
@@ -81,7 +81,7 @@ function GlobalGameViewModel() {
 					Komendy:
 						1 - stwórz gracza
 						2 - przesuń gracza
-						3 - gracz niedostpny / opuścił grę 
+						3 - gracz niedostpny / opuścił grę
 						4 - strzał
 		    	*/
 		    	if(event.data.command==1)
@@ -106,26 +106,26 @@ function GlobalGameViewModel() {
 		    }
 		});
 
-		self.socket.addEventListener("error", function(event) 
+		self.socket.addEventListener("error", function(event)
 		{
 		    alert('Error');
 		    console.log("error", event);
 		});
 
-		self.socket.addEventListener("close", function(event) 
+		self.socket.addEventListener("close", function(event)
 		{
 		    console.log("Not Connected");
 		});
 	}
 
 
-	$("#closeConnect").bind("click", function(event) 
+	$("#closeConnect").bind("click", function(event)
 	{
 	    self.socket.close();
 	    console.log("close")
 	});
 
-	$("#sendMessage").bind("click", function(event) 
+	$("#sendMessage").bind("click", function(event)
 	{
 	    var text = "placuszki";
 	    send(text, function(res){console.log("poszlo",res)})
@@ -137,10 +137,10 @@ function GlobalGameViewModel() {
 		self.windowWidth(innerWidth);
 	});
 
-	var send = function (message, callback) 
+	var send = function (message, callback)
 	{
 	      console.log("send message", message)
-	      waitForConnection(function () 
+	      waitForConnection(function ()
 	      {
 	      	for(var i = 0; i<2; i++)
 	      	{
@@ -155,7 +155,7 @@ function GlobalGameViewModel() {
 	      }, 1000);
 	};
 
-	var waitForConnection = function (callback, interval) 
+	var waitForConnection = function (callback, interval)
 	{
 	      if (self.socket.readyState === 1) {
 	          console.log("zaczyna");

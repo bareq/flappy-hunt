@@ -8,9 +8,11 @@ var frontEndServer = new FrontEndServer();
 frontEndServer.start();
 
 sys.puts("|-------> Oczekuję na podłączenie klienta FrontEnd...");
-while( !frontEndServer.isReady() ) {
-    // Oczekuję na podłączenie klienta
-}
+/*while(true) {
+    if( frontEndServer.isReady() ) {
+        // Oczekuję na podłączenie klienta
+    }
+}*/
 
 // Uruchamiam serwer dla aplikacji mobilnych
 sys.puts("|-------> Oczekuję na klientów mobilnych...")
