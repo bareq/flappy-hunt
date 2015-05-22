@@ -65,7 +65,7 @@ function GlobalGameViewModel() {
 	self.connectToServer = function()
 	{
 		self.socket = new WebSocket("ws://192.168.0.22:9999", "echo-protocol");
-
+		console.log("laczymy")
 		self.socket.addEventListener("open", function(event) 
 		{
 		    console.log("Connected");
@@ -172,10 +172,3 @@ function GlobalGameViewModel() {
 
 	$("#connect").bind('click', self.connectToServer);
 }
-
-$( document ).ready( function() {
-	DATA = {
-		Global: new GlobalGameViewModel()
-	}
-	ko.applyBindings();
-});
