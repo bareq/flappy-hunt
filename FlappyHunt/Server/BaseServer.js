@@ -17,6 +17,11 @@ module.exports = BaseServer = function() {
 }
 
 BaseServer.prototype.start = function() {
+    this.startWebServer();
+    this.initializeSocket();
+}
+
+BaseServer.prototype.startWebServer = function() {
     var self = this
     this.serverObject = my_http.createServer(function(request, response) {
         self.createServer(request, response);
@@ -25,8 +30,6 @@ BaseServer.prototype.start = function() {
     this.serverObject.listen(self.port, function() {
         sys.puts(self.helloMessage());
     });
-
-    this.initializeSocket();
 }
 
 BaseServer.prototype.createServer = function(request, response) {
@@ -42,9 +45,7 @@ BaseServer.prototype.initializeSocket = function() {
     self = this;
     this.socketObject.on('request', function(request) {
         var connection = request.accept('echo-protocol', request.origin);
-
         console.log(' |------> Dołączył gracz o IP: ' + connection.remoteAddress);
-
         // Dodaje obiekt gracza do tablicy
         self.players.push(new Player("Przykładowy login", "Czerwony", connection));
 
