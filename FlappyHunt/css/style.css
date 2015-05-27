@@ -1,57 +1,21 @@
 
-
 body{
 	color: pink;
+
 }
 
-
-
-
-
-/*  To tylko po to aby tak w oczy nie raziło ;) */
-
-body{
-	background: #e3e3e3;
-}
-
-.buy{
+#tlo{
+	position: absolute;
+	z-index: -1;
 	width: 100%;
-	text-align: center;
-	cursor: pointer;
+	height: 100%;
 }
 
-
-.red_input{
-	box-shadow: 0 0 5px #ff0033;
-	border: 1px solid #ff0033;
+.celownik-blok{
+	position: absolute;
 }
 
-input{
-	box-shadow: 0 0 5px #E6E8FA;
-	border: 1px solid #E6E8FA;
-}
-
-.tr_menu{
-	background: #545454;
-	text-decoration: none;
-}
-
-.td_menu{
-	font-weight: bold;
-	color: #E6E8FA;
-	border: 10px solid #545454;
-	text-decoration: none;
-}
-
-.td_menu:hover {
-	cursor: pointer;
-	color: #7093DB;
-}
-
-.zakladka{
-	background: #cdcdcd;
-}
-
-#koszyk{
-	display: none;
+.celownik{
+	width: 70px;
+	height: 70px;
 }

@@ -64,7 +64,7 @@ public class SerwerListActivity extends ActionBarActivity {
     private void scanPort(){
         try {
             Socket socket = new Socket();
-            InetAddress inetAddress = InetAddress.getByName("192.168.0.10");
+            InetAddress inetAddress = InetAddress.getByName("192.168.0.22");
             SocketAddress address = new InetSocketAddress(inetAddress, 135);
             socket.connect(address, 100);
             //OPEN
