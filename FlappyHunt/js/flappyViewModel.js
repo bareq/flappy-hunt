@@ -32,19 +32,22 @@ function flappyViewModel(options )
 		var bird = $( "#"+self.id );
 		var posx = x/80;
 		var posy = y/80;
-
+        console.log(self.img);
+        var tmp = 1;
 		var interval = setInterval(function () {
-			time += 25;
+            tmp++;
+			time += 200;
 			self.pos_x(self.pos_x()+posx);
 			self.pos_y(self.pos_y()+posy);
 			bird.css('left', '+='+posx);
 			bird.css('top', '+='+posy);
+            bird.find('img').attr('src','img/flappy_yellow_' + (tmp%2) + '.png');
 			if(time==2000)
 			{
 				clearInterval(interval);
 				self.randomFly();
 			}
-	    }, 25);
+	    }, 200);
 	}
 
 	self.fly = function(x, y)

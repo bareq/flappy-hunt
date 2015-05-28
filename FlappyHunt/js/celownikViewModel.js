@@ -10,7 +10,6 @@ function celownikViewModel(options )
 	 	self.img = options.img || "";
 	}
 
-
 	self.fly = function(x, y)
 	{
 		$( "#"+self.id ).animate({

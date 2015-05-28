@@ -3,7 +3,10 @@ function GlobalGameViewModel() {
 	self.users = ko.observable([]);
 	self.birds = ko.observable([]);
 	self.viewfinder = ['celownik_czarny', 'celownik_czerwony', 'celownik_fiolet', 'celownik_niebieski', 'celownik_zielony'];
-	self.viewFlappy = ['flappy_blue','flappy_green','flappy_red'];
+	//self.viewFlappy = ['flappy_yellow_1','flappy_green','flappy_red'];
+    self.viewFlappy = ['flappy_yellow_0'];
+    self.course = ['right', 'left', 'top'];
+
 
 	//inicjalizujemy klasę odpowiadającą za połączenie z serwerem ;)
 	self.clientServer = new ClientServerModel();

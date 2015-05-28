@@ -1,4 +1,24 @@
 $(document).ready(function(){
+    var windowWidth = $(window).width();
+    var panelWidth = $('.gamePanel').width();
+    $('.gamePanel').css('left', ((windowWidth-panelWidth)/2) + 'px');
+
+    $('#beginGame').click(function(){
+        $('.menuGame').animate({top: '-300px'},2000, function(){
+            $(this).remove();
+            setTimeout(function(){
+                $('.playersTable').animate({top: '300px'},2000);
+                $('#tlo').css('filter','none');
+            });
+        });
+
+    });
+
+    $('.playersTable').click(function(){
+        $(this).animate({opacity: 0},2000);
+        $('.gamePanel').animate({opacity: 1},2000);
+    });
+
   var close = document.getElementById("close");
   var send = document.getElementById("send");
   var ul = document.getElementById("ull");
@@ -68,4 +88,6 @@ $(document).ready(function(){
               waitForConnection(callback, interval);
           }, interval);
       }
-}})
+  }
+
+})
