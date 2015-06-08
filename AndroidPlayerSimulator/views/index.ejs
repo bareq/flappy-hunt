@@ -12,11 +12,14 @@
 
 	<!-- Latest compiled JavaScript -->
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<script src="javascript/WSManager.js" type="text/javascript"></script>
+	<script src="javascript/interaction.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="container">
 		<h1>Strona symulująca kontroler (urządzenie z androidem)</h1>  
-		<form class="well form-inline">
+		<div class="well form-inline">
 			<legend>Połączenie</legend>
 			<div class="form-group">
 			    <input type="text" class="form-control" id="serwer" placeholder="Adres serwera">
@@ -24,12 +27,12 @@
 			<div class="form-group">
 			    <input type="text" class="form-control" id="port" placeholder="Port">
 			</div>
-			<button class="btn btn-default">Połącz</button>
+			<button id="connect" class="btn btn-default">Połącz</button>
 			<div class="form-group">
 			    <input type="username" class="form-control" id="username" placeholder="Nazwa użytkownika">
 		  	</div>
-			<button class="btn btn-default">Dołącz</button>
-		</form>
+			<button id="join" class="btn btn-default">Dołącz</button>
+		</div>
 		<div class="well">
 			<legend>Poruszanie</legend>
 			<div class="row">
@@ -48,7 +51,7 @@
 		<div class="well">
 			<legend>Odpowiedź</legend>
 			<div class="form-group">
-  				<textarea class="form-control" rows="5" id="comment" readonly></textarea>
+  				<textarea class="form-control" rows="5" id="logger" readonly></textarea>
 			</div>
 		</div>
 	</div>
